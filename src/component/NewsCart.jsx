@@ -1,51 +1,15 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import clsx from 'clsx';
-import Card from '@material-ui/core/Card';
-import CardHeader from '@material-ui/core/CardHeader';
-import CardMedia from '@material-ui/core/CardMedia';
-import CardContent from '@material-ui/core/CardContent';
-import CardActions from '@material-ui/core/CardActions';
-import Collapse from '@material-ui/core/Collapse';
-import Avatar from '@material-ui/core/Avatar';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import { red } from '@material-ui/core/colors';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShareIcon from '@material-ui/icons/Share';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
+import { useStyles } from './NewsCart';
+import { clsx, Card, CardHeader, CardMedia, CardContent, CardActions, Collapse, Avatar, IconButton, Typography, FavoriteIcon, ShareIcon, ExpandMoreIcon, MoreVertIcon, } from '../muiExport'
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    maxWidth: 645,
-    marginTop:12,
-    
-  },
-  media: {
-    height: 0,
-    paddingTop: '56.25%', // 16:9
-  },
-  expand: {
-    transform: 'rotate(0deg)',
-    marginLeft: 'auto',
-    transition: theme.transitions.create('transform', {
-      duration: theme.transitions.duration.shortest,
-    }),
-  },
-  expandOpen: {
-    transform: 'rotate(180deg)',
-  },
-  avatar: {
-    backgroundColor: red[500],
-  },
 
-  page:{
-    display:'flex',
-    alignItems:'center',
-    justifyContent:'center',
-  }
-}));
+
+
+// fetch data here
+
+const API_KEY="2da948ccccd347f39e9e6b0d28e39a0f";
+
+
 
 export default function RecipeReviewCard() {
   const classes = useStyles();
@@ -74,7 +38,7 @@ export default function RecipeReviewCard() {
       />
       <CardMedia
         className={classes.media}
-        image="/static/images/cards/paella.jpg"
+        image="https://storage.googleapis.com/afs-prod/media/30b2f4ff566a485988e6e6a10fdc7d66/1000.webp"
         title="Paella dish"
       />
       <CardContent>
