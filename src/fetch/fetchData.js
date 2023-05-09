@@ -2,20 +2,25 @@
 
 import React from 'react'
 import { useState, useEffect } from 'react';
+import RecipeReviewCard from '../component/NewsCart.jsx';
+import "./fetch.css"
 
 const FetchData = () => {
 
     const [articles, setArticles] = useState([]);
     const [search, setSearch] = useState('');
-  
+
     useEffect(() => {
-      const apiKey = 'YOUR_API_KEY';
-      const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`;
+      const apiKey = '2da948ccccd347f39e9e6b0d28e39a0f';
+    const url= `https://newsapi.org/v2/everything?q=tesla&from=2023-04-09&sortBy=publishedAt&apiKey=${apiKey}`
+    
   
       fetch(url)
         .then((response) => response.json())
         .then((data) => setArticles(data.articles));
     }, []);
+    console.log(articles);
+  
   
     const filteredArticles = articles.filter((article) =>
       article.title.toLowerCase().includes(search.toLowerCase())
@@ -23,21 +28,19 @@ const FetchData = () => {
   
     return (
       <div>
-        <input
-          type="text"
-          placeholder="Search for news..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
-        <ul>
+    
+
+        
+        <div className="item">
           {filteredArticles.map((article) => (
-            <li key={article.url}>
-              <a href={article.url} target="_blank" rel="noopener noreferrer">
-                {article.title}
-              </a>
-            </li>
+        <div className="article" >
+            
+            <RecipeReviewCard key={ article.id} title={article.title} url= {articles.url} description={article.description} urlToImage={ article.urlToImage} setSearch={setSearch} search={search} author={article.author} source={article.source} content={article.content}/>
+            </div>
+            
+            
           ))}
-        </ul>
+        </div>
       </div>
     );
 };

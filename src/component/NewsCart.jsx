@@ -7,11 +7,10 @@ import { clsx, Card, CardHeader, CardMedia, CardContent, CardActions, Collapse, 
 
 // fetch data here
 
-const API_KEY="2da948ccccd347f39e9e6b0d28e39a0f";
 
 
 
-export default function RecipeReviewCard() {
+export default function RecipeReviewCard({id, title,url, description, urlToImage, setSearch, search, author, source, content }) {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
@@ -20,12 +19,21 @@ export default function RecipeReviewCard() {
   };
 
   return (
+    <div>
+  
     <div className={classes.page}>
+    {/* <inpu
+     type="text"
+     placeholder="Search for news..."
+    value={search}
+     onChange={(e) => setSearch(e.target.value)}
+ />*/}
+  
     <Card className={classes.root}>
       <CardHeader
         avatar={
-          <Avatar aria-label="recipe" className={classes.avatar}>
-            N
+          <Avatar aria-label="recipe" className={classes.avatar} style={{backgroundColor:"red", color:"white"}}>
+            G
           </Avatar>
         }
         action={
@@ -33,18 +41,17 @@ export default function RecipeReviewCard() {
             <MoreVertIcon />
           </IconButton>
         }
-        title="Shrimp and Chorizo Paella"
-        subheader="September 14, 2016"
+        title={title}
+        
       />
       <CardMedia
         className={classes.media}
-        image="https://storage.googleapis.com/afs-prod/media/30b2f4ff566a485988e6e6a10fdc7d66/1000.webp"
-        title="Paella dish"
+        image={urlToImage}
+        title={title}
       />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-          This impressive paella is a perfect party dish and a fun meal to cook together with your
-          guests. Add 1 cup of frozen peas along with the mussels, if you like.
+          {description}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
@@ -69,16 +76,10 @@ export default function RecipeReviewCard() {
         <CardContent>
           <Typography paragraph>Method:</Typography>
           <Typography paragraph>
-            Heat 1/2 cup of the broth in a pot until simmering, add saffron and set aside for 10
-            minutes.
+           {url}
           </Typography>
           <Typography paragraph>
-            Heat oil in a (14- to 16-inch) paella pan or a large, deep skillet over medium-high
-            heat. Add chicken, shrimp and chorizo, and cook, stirring occasionally until lightly
-            browned, 6 to 8 minutes. Transfer shrimp to a large plate and set aside, leaving chicken
-            and chorizo in the pan. Add pimentón, bay leaves, garlic, tomatoes, onion, salt and
-            pepper, and cook, stirring often until thickened and fragrant, about 10 minutes. Add
-            saffron broth and remaining 4 1/2 cups chicken broth; bring to a boil.
+            
           </Typography>
           <Typography paragraph>
             Add rice and stir very gently to distribute. Top with artichokes and peppers, and cook
@@ -93,6 +94,7 @@ export default function RecipeReviewCard() {
         </CardContent>
       </Collapse>
     </Card>
+    </div>
     </div>
   );
 }
