@@ -1,0 +1,40 @@
+/* style our search bar */
+
+.input{
+    display: flex;
+    margin-top: 3rem;
+    justify-content: center;
+
+}
+
+input{
+    padding: 12px 25px;
+    outline: none;
+    border: none;
+    border-radius: 10px 0 0 10px ;
+    
+    color: #333;
+    background-color: rgb(239, 239, 241);
+    
+
+}
+button{
+    color: #fff;
+    background-color:rgb(21, 64, 206);
+    border: none;
+    border-radius: 0 30px  30px  0;
+    cursor:pointer;
+    transition:  all 10ms ease-in-out;
+    padding-left: 23px;
+    padding-right: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+button:hover{
+    background-color: cadetblue;
+    color: #fff;
+
+
+}

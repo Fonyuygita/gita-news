@@ -10,7 +10,7 @@ import { clsx, Card, CardHeader, CardMedia, CardContent, CardActions, Collapse, 
 
 
 
-export default function RecipeReviewCard({id, title,url, description, urlToImage, setSearch, search, author, source, content }) {
+export default function RecipeReviewCard({id, title,url, description, urlToImage, setSearch, search, author, source, content  }) {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
@@ -79,7 +79,7 @@ export default function RecipeReviewCard({id, title,url, description, urlToImage
            {url}
           </Typography>
           <Typography paragraph>
-            
+            {content}
           </Typography>
           <Typography paragraph>
             Add rice and stir very gently to distribute. Top with artichokes and peppers, and cook
@@ -89,7 +89,8 @@ export default function RecipeReviewCard({id, title,url, description, urlToImage
             minutes more. (Discard any mussels that don’t open.)
           </Typography>
           <Typography>
-            Set aside off of the heat to let rest for 10 minutes, and then serve.
+          <a href={url}>Learn More</a>
+            
           </Typography>
         </CardContent>
       </Collapse>

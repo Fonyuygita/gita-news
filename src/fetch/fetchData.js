@@ -11,8 +11,9 @@ const FetchData = () => {
     const [search, setSearch] = useState('');
 
     useEffect(() => {
-      const apiKey = '2da948ccccd347f39e9e6b0d28e39a0f';
-    const url= `https://newsapi.org/v2/everything?q=tesla&from=2023-04-09&sortBy=publishedAt&apiKey=${apiKey}`
+     
+    
+const url=process.env.REACT_APP_API_KEY;
     
   
       fetch(url)
@@ -35,7 +36,7 @@ const FetchData = () => {
           {filteredArticles.map((article) => (
         <div className="article" >
             
-            <RecipeReviewCard key={ article.id} title={article.title} url= {articles.url} description={article.description} urlToImage={ article.urlToImage} setSearch={setSearch} search={search} author={article.author} source={article.source} content={article.content}/>
+            <RecipeReviewCard key={ article.id} title={article.title} url= {article.url} description={article.description} urlToImage={ article.urlToImage} setSearch={setSearch} search={search} author={article.author} source={article.source} content={article.content}/>
             </div>
             
             
