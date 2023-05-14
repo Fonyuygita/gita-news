@@ -4,7 +4,8 @@ export const DataContext=createContext();
 
 export const DataContextProvider=({children})=>{
     // api key and stuff
-   const url= "https://newsapi.org/v2/everything?q=apple&from=2023-05-10&to=2023-05-10&sortBy=popularity&apiKey=2da948ccccd347f39e9e6b0d28e39a0f";
+    
+   const url= `https://newsapi.org/v2/everything?q=apple&from=2023-05-10&to=2023-05-10&sortBy=popularity&apiKey=${process.env.REACT_APP_API_KEY}`;
 
     const [articles, setArticles] = useState([]);
 const [search, setSearch] = useState('');
