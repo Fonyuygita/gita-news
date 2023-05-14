@@ -6,6 +6,8 @@ import FetchData from "./fetch/fetchData";
 
 import Search from "./component/search/Search.jsx"
 import Load from "./component/Load";
+import { DataContext } from "./context/DataContext";
+import { useContext } from "react";
 
 
 
@@ -13,11 +15,13 @@ import Load from "./component/Load";
 
 
 const App = () => {
+  const {loading}=useContext(DataContext)
+  console.log(loading);
   return (
     <div>
     <MenuAppBar/>
     <Search/>
-    <Load/>
+   {loading && <Load/> }
     
     <FetchData/>
     </div>
