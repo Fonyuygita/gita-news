@@ -8,6 +8,7 @@ import Search from "./component/search/Search.jsx"
 import Load from "./component/Load";
 import { DataContext } from "./context/DataContext";
 import { useContext } from "react";
+import Sidebar from "./component/sidebar/Sidebar";
 
 
 
@@ -18,12 +19,25 @@ const App = () => {
   const {loading}=useContext(DataContext)
   console.log(loading);
   return (
-    <div>
+    <div className="look">
     <MenuAppBar/>
-    <Search/>
-   {loading && <Load/> }
+    <div className="design">
+<div className="design-1">
+<Sidebar/>
+
+</div>
+<div className="design-2">
+
+
+<Search/>
+{loading && <Load/> }
+ 
+ <FetchData/>
+
+</div>
     
-    <FetchData/>
+    </div>
+
     </div>
   )
 }

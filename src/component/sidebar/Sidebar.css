@@ -1,0 +1,27 @@
+.sidebar{
+    height: max-height;
+    padding: 3rem;
+    border-right: 1px solid gray;
+    height: 100vh;
+
+}
+.middle{
+    margin-top: 1px solid gray;
+}
+select{
+    font-size: 16px;
+    color: #333;
+    padding: 8px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+}
+select option{
+    padding: 20px;
+}
+select option:checked{
+    background: #ccc;
+}
+selecct:hover, select:focus{
+    outline: none;
+    border-color: #999;
+}

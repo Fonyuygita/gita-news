@@ -29,12 +29,16 @@ useEffect(() => {
 
 
 
+
+
+
+
 const filteredArticles = articles.filter((article) =>
   article.title.toLowerCase().includes(search.toLowerCase())
 );
 
 return (
-<DataContext.Provider value={{articles, search, filteredArticles,loading }}>{children}</DataContext.Provider>
+<DataContext.Provider value={{articles, search, filteredArticles,loading, setSearch }}>{children}</DataContext.Provider>
 )
 
 }

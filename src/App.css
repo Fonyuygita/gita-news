@@ -1,3 +1,17 @@
 body{
   color:black;
 }
+.design{
+  display: flex;
+ 
+}
+.design-1{
+  flex: 1;
+  height: max-content;
+}
+
+.design-2{
+  flex:5;
+  align-items: center;
+  
+}
